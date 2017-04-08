@@ -3,13 +3,13 @@ name := "scala-sbt-servlet"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
   "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
-  "org.scalatest" %% "scalatest" % "2.2.5" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
 
 enablePlugins(JettyPlugin)
 
-containerPort := 9090
+containerPort := 19090
