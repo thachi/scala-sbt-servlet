@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/workdir
+    docker:
+    - image: hseeberger/scala-sbt:latest
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: sbt-cache
+
+      - run:
+          name: Build packages
+          command: sbt clean package
+
+      - save_cache:
+          key: sbt-cache
+          paths:
+            - "~/.ivy2/cache"
+            - "~/.sbt"
+            - "~/.m2"
